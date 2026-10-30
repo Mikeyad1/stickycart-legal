@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StickyCart — Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f6f2;
+      --ink: #1a1a18;
+      --muted: #6b6b65;
+      --accent: #2563eb;
+      --rule: #dddbd3;
+      --card: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,246,242,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 2.5rem 3.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.2rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+    }
+    .updated {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .doc-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--ink);
+    }
+    .doc-section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .doc-section > h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    /* ── CLAUSES ── */
+    .clause {
+      margin-bottom: 2.2rem;
+    }
+    .clause h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .clause p, .clause ul {
+      color: #3d3d38;
+      font-size: 0.97rem;
+    }
+    .clause ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+    .clause ul li { margin-bottom: 0.3rem; }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      margin-top: 3rem;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 1.75rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .contact-card p { font-size: 0.93rem; color: #3d3d38; }
+    .contact-card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .hero, .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">StickyCart</a>
+  <div class="nav-links">
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Use</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Legal</span>
+  <h1>Privacy Policy &amp; Terms of Use</h1>
+  <p>StickyCart adds a sticky Add to Cart bar to online store product pages. These documents explain how we handle data and what governs your use of the app.</p>
+  <p class="updated">Last updated: October 30, 2026</p>
+</div>
+
+<div class="container">
+
+  <section class="doc-section" id="privacy">
+    <p class="section-label">Document 01</p>
+    <h2>Privacy Policy</h2>
+
+    <div class="clause">
+      <h3>1. Who We Are</h3>
+      <p>StickyCart ("the App", "we", "us") is a third-party application available on the Wix App Market, developed by Michael Adam (Brivano Labs). Site owners ("Site Owners") install the App on their online store to show a sticky Add to Cart bar to their visitors ("Shoppers").</p>
+    </div>
+
+    <div class="clause">
+      <h3>2. Data We Collect</h3>
+      <p>StickyCart does <strong>not</strong> collect, store or transmit any personal data. The App has no servers and no database of its own.</p>
+      <ul>
+        <li>The bar is a small script that runs only in the Shopper's browser, on the store's product pages.</li>
+        <li>It reads the product options shown on the page (for example size or color) only to check that the Shopper has chosen them, and then uses the store's own Add to Cart button.</li>
+        <li>Products, prices, stock, carts and checkout are handled entirely by the store platform, under the store's and Wix's own policies. StickyCart never sees or receives cart contents, order details or payment information.</li>
+        <li>As part of installing any app, Wix may make basic site details (such as the site ID) available to the App. We do not store or use them.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>3. How We Use Data</h3>
+      <p>Because we do not collect data, we do not use, sell, rent or share any data, and we do not use data for advertising, analytics or profiling.</p>
+    </div>
+
+    <div class="clause">
+      <h3>4. Third Parties</h3>
+      <p>StickyCart does not send data to any third party and uses no sub-processors. The App's script is delivered by Wix as part of the store's site.</p>
+    </div>
+
+    <div class="clause">
+      <h3>5. Cookies &amp; Tracking</h3>
+      <p>StickyCart does not set cookies, does not use browser storage, and does not use tracking pixels or analytics scripts.</p>
+    </div>
+
+    <div class="clause">
+      <h3>6. Data Retention &amp; Your Rights</h3>
+      <p>Since we hold no personal data, there is nothing for us to retain or delete. If you are located in the European Union or European Economic Area, you still have the right to ask us about your data; contact us at the email address below and we will respond within 30 days.</p>
+    </div>
+
+    <div class="clause">
+      <h3>7. Children's Privacy</h3>
+      <p>StickyCart is not directed at children under the age of 13 and does not knowingly collect data from anyone.</p>
+    </div>
+
+    <div class="clause">
+      <h3>8. Changes to This Policy</h3>
+      <p>If a future version of the App starts handling any data, we will update this policy before that change takes effect. The "Last updated" date at the top of this page reflects the latest revision.</p>
+    </div>
+
+    <div class="contact-card">
+      <p><strong>Privacy contact</strong><br />
+      For privacy-related questions, email us at: <a href="mailto:hello@brivanolabs.com">hello@brivanolabs.com</a><br />
+      We aim to respond within 30 days.</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="terms">
+    <p class="section-label">Document 02</p>
+    <h2>Terms of Use</h2>
+
+    <div class="clause">
+      <h3>1. Acceptance of Terms</h3>
+      <p>By installing or using StickyCart ("the App"), you agree to these Terms of Use. If you do not agree, do not install or use the App.</p>
+    </div>
+
+    <div class="clause">
+      <h3>2. Description of Service</h3>
+      <p>StickyCart shows a sticky Add to Cart bar on product pages of online stores built on Wix. The bar uses the store's own Add to Cart button, cart, stock rules and settings. The App is distributed through the Wix App Market and is also subject to Wix's platform terms.</p>
+    </div>
+
+    <div class="clause">
+      <h3>3. Site Owner Responsibilities</h3>
+      <ul>
+        <li>Using the App in line with applicable laws and Wix's Terms of Service.</li>
+        <li>Checking that the bar works as expected with their store's design, products and settings.</li>
+        <li>Their products, prices, stock, orders and checkout, which are managed by the store platform and not by the App.</li>
+      </ul>
+    </div>
+
+    <div class="clause">
+      <h3>4. Pricing</h3>
+      <p>StickyCart is currently free. If paid plans are introduced, they will be offered through the Wix App Market, and existing users will be told before any charge applies.</p>
+    </div>
+
+    <div class="clause">
+      <h3>5. Intellectual Property</h3>
+      <p>The StickyCart application, its code, design and branding are the intellectual property of Michael Adam. You may not copy, modify or redistribute the App except as allowed by the Wix App Market.</p>
+    </div>
+
+    <div class="clause">
+      <h3>6. Disclaimer of Warranties</h3>
+      <p>StickyCart is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, compatible with every store design, or suitable for any particular purpose.</p>
+    </div>
+
+    <div class="clause">
+      <h3>7. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, StickyCart and its developer shall not be liable for any indirect, incidental, special, consequential or punitive damages arising from the use of the App, including lost sales, lost revenue or lost data.</p>
+    </div>
+
+    <div class="clause">
+      <h3>8. Termination</h3>
+      <p>Site Owners may uninstall the App at any time from their Wix dashboard; the bar stops appearing immediately. We may discontinue the App or end access for anyone who violates these Terms.</p>
+    </div>
+
+    <div class="clause">
+      <h3>9. Governing Law</h3>
+      <p>These Terms are governed by the laws of the State of Israel, without regard to conflict of law principles. Any disputes shall be resolved in the courts of Israel.</p>
+    </div>
+
+    <div class="clause">
+      <h3>10. Changes to These Terms</h3>
+      <p>We may update these Terms at any time. The "Last updated" date reflects the most recent revision. Continued use of the App constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="contact-card">
+      <p><strong>Questions about these Terms?</strong><br />
+      Contact us at: <a href="mailto:hello@brivanolabs.com">hello@brivanolabs.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 StickyCart by Brivano Labs. All rights reserved.</p>
+  <p><a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms">Terms of Use</a></p>
+</footer>
+
+</body>
+</html>
